@@ -1,0 +1,17 @@
+@mixin background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+@mixin flexy {
+    display: flex;
+    flex-direction: column;
+}
+
+$neonGreen: #04D939;
+$mediumGreen: #03A63C;
+$darkGreen: #027333;
+$darkTeal: #025959;
+$darkBlue: #012340;
+$black: #000;
+$teal: #88F2E8;

@@ -1,0 +1,51 @@
+@import "./variables";
+
+.logo{
+  text-decoration: none;
+  color: $neonGreen;
+  &:hover{
+    text-decoration: none;
+    color: rgb(22, 111, 125);
+    font-weight: 800;
+  }
+}
+.sidebar {
+  @include flexy();
+  background-image: url(../img/aurora-small.jpg);  
+  @include background();
+  height: 500px;
+  width: calc(35% - 25px);
+  margin-right: 45px;
+  margin-left: 10px;
+  h4{
+    display: block;
+    color: $mediumGreen;
+  }
+}
+
+#ae-list {
+  a{
+  text-decoration: none;
+  font-size: larger;
+  color: $mediumGreen;
+  font-weight: 500;
+  border-bottom: solid white 1px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  &:hover{
+    color: $neonGreen;
+    text-decoration: none;
+    border-bottom: $teal 3px;
+  }
+}
+}
+
+
+
+
+
+
+
+
+

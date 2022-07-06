@@ -1,0 +1,22 @@
+@import "./variables";
+@import "./cards";
+@import "./sidebar";
+
+body {
+  background-color: black;
+}
+
+.ae-head {
+  background-image: url(../img/aurora.jpg);
+  height: 400px;
+  @include background();
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  h1 {
+    color: $neonGreen;
+  }
+  h4 {
+    color: $teal;
+  }
+}
