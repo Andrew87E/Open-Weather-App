@@ -6,6 +6,11 @@ var lat;
 var lon;
 var listEl = $("#ae-list");
 var userInput = $("#userInput");
+var weatherData;
+var usableData;
+var weatherCurrent;
+var weatherDaily;
+var weatherHourly;
 
 
 fetch(geoAPIUrl)
@@ -20,15 +25,23 @@ fetch(geoAPIUrl)
     lon = data[0].lon;
   })
   .then(function () {
-    var weatherAPIUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    var weatherAPIUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
     fetch(weatherAPIUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-    });
-  });
+      weatherCurrent = data.current;
+      weatherDaily = data.daily;
+      weatherHourly = data.hourly;
+      console.log(data.current);
+    })
+  })
+
+  // .then(console.log(weatherDaily));
+  // .then(console.log(weatherHourly));
+  // .then(console.log(weatherCurrent));
+
 
   $("#userInput").keypress(function (event) {
     if (event.key === "Enter") {
@@ -38,6 +51,8 @@ fetch(geoAPIUrl)
         userInput = this.value;
         localStorage.setItem("cityName", userInput);
         addListItem();
+        generateWeather();
+        console.log(data)
       }
     }
   });
@@ -55,8 +70,6 @@ console.log(cityName);
 function getLatLon() {
     
 
-console.log(lat);
-console.log(lon);
 }
 function currentForecast() {
   console.log(lat);
@@ -75,3 +88,14 @@ $(".option").click(function(){
     $(".option").removeClass("active");
     $(this).addClass("active");
  });
+
+ function generateBackground(){
+  //if weather = sunny {insert sunny background and icon}
+  //else if weather === rain {insert rainy background}
+  //else if weather === cloudy {insert cloudy background}
+  // else if
+ }
+
+ function generateForecastCard(){
+  //for loop iterate through built array of data 
+ }

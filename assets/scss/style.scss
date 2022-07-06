@@ -10,7 +10,6 @@ body {
   background-image: url(../img/aurora.jpg);
   height: 400px;
   @include background();
-  width: 100%;
   margin: 10px;
   padding: 10px;
   h1 {
@@ -18,5 +17,27 @@ body {
   }
   h4 {
     color: $teal;
+  }
+}
+
+.current-city {
+  height: 500px;
+  width: calc(65% - 50px);
+  float: right;
+  border: solid 1px;
+  margin-right: 10px;
+  display: flex;
+  flex: row wrap;
+  background-image: url(../img/aurora.jpg);
+  
+  h1 {
+    color: aqua;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .city-info{
+    color: $teal;
+    font-size: x-large;
+    justify-content: flex-end;
+    align-self: flex-end;
   }
 }

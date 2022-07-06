@@ -5,7 +5,7 @@
 }
 @mixin flexy {
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
 }
 
 $neonGreen: #04D939;
