@@ -35,6 +35,8 @@ fetch(geoAPIUrl)
       weatherDaily = data.daily;
       weatherHourly = data.hourly;
       console.log(data.current);
+      //function to call after populating data
+      //write to the dom
     })
   })
 
