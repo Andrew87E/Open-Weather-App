@@ -21,6 +21,9 @@
   perspective: 1000px;
   height: 100px;
 }
+.forecast-card h1 {
+  color: aqua;
+}
 .forecast-card__cover {
   position: absolute;
   z-index: 1;
@@ -39,9 +42,12 @@
   transition: transform 0.35s ease-in-out;
   background-image: url(../img/aurora-small.jpg);
 }
+.forecast-card__cover p {
+  position: absolute;
+  bottom: 0;
+}
 .forecast-card__cover::after {
   display: block;
-  content: "Hello world";
   position: absolute;
   z-index: 100;
   top: 0;
@@ -128,6 +134,38 @@
   border-bottom: #88F2E8 3px;
 }
 
+.sunny {
+  background-color: yellow;
+}
+
+.cloudy {
+  background-color: gray;
+}
+
+.rain {
+  background-color: grey;
+}
+
+.lowuvi {
+  color: green;
+}
+
+.meduvi {
+  color: yellow;
+}
+
+.moderateuvi {
+  color: orange;
+}
+
+.highuvi {
+  color: red;
+}
+
+.yougonnadie {
+  color: purple;
+}
+
 body {
   background-color: black;
 }
@@ -151,20 +189,36 @@ body {
 .current-city {
   height: 500px;
   width: calc(65% - 50px);
-  float: right;
   border: solid 1px;
   margin-right: 10px;
   display: flex;
-  flex: row wrap;
-  background-image: url(../img/aurora.jpg);
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: aqua;
 }
 .current-city h1 {
   color: aqua;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  align-self: flex-start;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-.current-city .city-info {
-  color: #88F2E8;
+.current-city p {
   font-size: x-large;
   justify-content: flex-end;
   align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#uvi {
+  font-size: x-large;
+  justify-content: flex-end;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }/*# sourceMappingURL=style.css.map */

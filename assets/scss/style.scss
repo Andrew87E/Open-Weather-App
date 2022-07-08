@@ -1,6 +1,7 @@
 @import "./variables";
 @import "./cards";
 @import "./sidebar";
+@import './weathers';
 
 body {
   background-color: black;
@@ -23,21 +24,39 @@ body {
 .current-city {
   height: 500px;
   width: calc(65% - 50px);
-  float: right;
+  // float: right;
   border: solid 1px;
   margin-right: 10px;
   display: flex;
-  flex: row wrap;
-  background-image: url(../img/aurora.jpg);
-  
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: aqua;
   h1 {
     color: aqua;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    align-self: flex-start;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
-  .city-info{
-    color: $teal;
+  p {
+    // color: white;
     font-size: x-large;
     justify-content: flex-end;
     align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
+}
+
+#uvi{
+  font-size: x-large;
+  justify-content: flex-end;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
