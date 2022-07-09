@@ -248,45 +248,104 @@ function generateForecastCard() {
       "</p>"
   );
   console.log(weatherDaily[0].weather[0].icon);
-  for (i = 0; i < 6; i++) {
-    var icon = weatherDaily[i].weather[0].icon;
-    // var card = $('.forecast-card__cover')[i]
+  // var card = $('.forecast-card__cover')[i]
+
+  $(".forecast-card__cover").each(generateBackground());
+  
+  function generateBackground() {
+    for (i = 0; i < 6; i++) {
+      var icon = weatherDaily[i].weather[0].icon;
+    }
     if (icon === "01d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/01d.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/01d.gif)"
+      ); //change to sunny day
     } else if (icon === "01n") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/01n.gif)"); //sunny night
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/01n.gif)"
+      ); //sunny night
     } else if (icon === "02d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/02d.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/02d.gif)"
+      ); //change to sunny day
     } else if (icon === "02n") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/02n.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/02n.gif)"
+      ); //change to sunny day
     } else if (icon === "03d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/03d.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/03d.gif)"
+      ); //change to sunny day
     } else if (icon === "03n") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/03n.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/03n.gif)"
+      ); //change to sunny day
     } else if (icon === "04d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/04d.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/04d.gif)"
+      ); //change to sunny day
     } else if (icon === "04n") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/04n.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/04n.gif)"
+      ); //change to sunny day
     } else if (icon === "09d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/09d.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/09d.gif)"
+      ); //change to sunny day
     } else if (icon === "09n") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/09n.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/09n.gif)"
+      ); //change to sunny day
     } else if (icon === "10d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/10d.gif)");
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/10d.gif)"
+      );
     } else if (icon === "10n") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/10n.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/10n.gif)"
+      ); //change to sunny day
     } else if (icon === "11d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/11d.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/11d.gif)"
+      ); //change to sunny day
     } else if (icon === "11n") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/11n.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/11n.gif)"
+      ); //change to sunny day
     } else if (icon === "13d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/13d.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/13d.gif)"
+      ); //change to sunny day
     } else if (icon === "13n") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/13n.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/13n.gif)"
+      ); //change to sunny day
     } else if (icon === "50d") {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/50d.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/50d.gif)"
+      ); //change to sunny day
     } else {
-      $('.ae-container').get(i).css("background-image", "url(./assets/img/50n.gif)"); //change to sunny day
+      $(".forecast-card__cover").css(
+        "background-image",
+        "url(./assets/img/50n.gif)"
+      ); //change to sunny day
     }
   }
 }
