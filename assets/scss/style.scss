@@ -4,7 +4,7 @@
 @import './weathers';
 
 body {
-  background-color: black;
+  background-color: #000;
 }
 
 .ae-head {
@@ -59,4 +59,8 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+#futureWeather{
+  color: aqua;
+  font-weight: 400;
 }

@@ -32,7 +32,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-image: linear-gradient(120deg, #04D939 0%, #03A63C 100%);
   background-size: cover;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
@@ -40,7 +39,9 @@
   will-change: transform;
   transform: skewX(0.001deg);
   transition: transform 0.35s ease-in-out;
-  background-image: url(../img/aurora-small.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .forecast-card__cover p {
   position: absolute;
@@ -54,7 +55,7 @@
   left: 0;
   width: 100%;
   height: 120%;
-  background: linear-gradient(226deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 35%, rgba(255, 255, 255, 0.2) 42%, rgba(255, 255, 255, 0) 60%);
+  background: linear-gradient(226deg, rgba(122, 116, 116, 0.4) 0%, rgba(239, 232, 232, 0.4) 35%, rgba(240, 228, 228, 0.2) 42%, rgba(255, 255, 255, 0) 60%);
   transform: translateY(-20%);
   will-change: transform;
   transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
@@ -73,8 +74,8 @@
   left: 5%;
   width: 90%;
   height: 90%;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+  background: black;
+  box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.9);
   will-change: opacity;
   transform-origin: top center;
   transform: skewX(0.001deg);
@@ -167,7 +168,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #000;
 }
 
 .ae-head {
@@ -221,4 +222,9 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+#futureWeather {
+  color: aqua;
+  font-weight: 400;
 }/*# sourceMappingURL=style.css.map */

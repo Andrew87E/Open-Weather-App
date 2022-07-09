@@ -8,7 +8,6 @@ var listEl = $("#ae-list");
 var userInput = $("#userInput");
 var currentCityEl = $(".current-city");
 var allForecastEl = $(".forecast-card");
-var uviEl = $("#uvi");
 // allForecastEl.hide();
 var weatherData;
 var usableData;
@@ -35,9 +34,8 @@ function generateGeo() {
         .then(function (data) {
           weatherCurrent = data.current;
           weatherDaily = data.daily;
-          console.log(weatherDaily)
+          console.log(weatherDaily);
           generateCurrentWeather();
-          generateForecastCard();
         });
     });
 }
@@ -51,8 +49,11 @@ $(".default").on("click", function () {
   geoAPIUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
 });
 
-$("#userInput").keypress(function (event) {
+userInput.keypress(function (event) {
+  if (listEl) {
+  }
   if (event.key === "Enter") {
+    currentCityEl.text("");
     userInput = this.value;
     cityName = this.value;
     localStorage.setItem("cityName", userInput);
@@ -78,6 +79,7 @@ function generateCurrentWeather() {
       "</h1>" +
       "<br>"
   );
+
   currentCityEl.append(
     "<p>" +
       "The current temp is : " +
@@ -94,11 +96,15 @@ function generateCurrentWeather() {
       " mph " +
       "<br>" +
       "<br>" +
+      "</p>" +
+      '<p id="uvi">' +
+      "The current UV Index is " +
+      weatherCurrent.uvi +
       "</p>"
   );
-  uviEl.append("<p>" + "The current UV Index is " + weatherCurrent.uvi);
 
-  console.log(weatherCurrent.wind_gust);
+  var uviEl = $("#uvi");
+
   if (weatherCurrent.uvi < 3) {
     uviEl.addClass("lowuvi");
   } else if (weatherCurrent.uvi > 3 && weatherCurrent.uvi < 6) {
@@ -110,30 +116,184 @@ function generateCurrentWeather() {
   } else {
     uviEl.addClass("yougonnadie");
   }
+  console.log("uviEL", uviEl);
+  uviEl.text("The current UV Index is " + weatherCurrent.uvi);
+  generateForecastCard();
 }
 
 function generateForecastCard() {
+  $("#day-0").append(
+    "<h1>" +
+      moment().add(1, "day").format("dddd") +
+      " " +
+      "</h1>" +
+      "<p id=futureWeather>" +
+      " It will be: " +
+      weatherDaily[0].weather[0].description +
+      "<br>" +
+      "<br>" +
+      "The high will be : " +
+      weatherDaily[0].temp.max +
+      "<br>" +
+      "The low will be : " +
+      weatherDaily[0].temp.min +
+      "<br>" +
+      "<br>" +
+      " The humidity will be : " +
+      weatherDaily[0].humidity +
+      "<br>" +
+      "<br>" +
+      "The UV Index will be " +
+      weatherDaily[0].uvi +
+      "</p>"
+  );
   $("#day-1").append(
-    "<h1>" + moment().add(1, "day").format("dddd") + " " + "</h1>"
-
+    "<h1>" +
+      moment().add(2, "day").format("dddd") +
+      " " +
+      "</h1>" +
+      "<p id=futureWeather>" +
+      " It will be: " +
+      weatherDaily[1].weather[0].description +
+      "<br>" +
+      "<br>" +
+      "The high will be : " +
+      weatherDaily[1].temp.max +
+      "<br>" +
+      "The low will be : " +
+      weatherDaily[1].temp.min +
+      "<br>" +
+      "<br>" +
+      " The humidity will be : " +
+      weatherDaily[1].humidity +
+      "<br>" +
+      "<br>" +
+      "The UV Index will be " +
+      weatherDaily[1].uvi +
+      "</p>"
   );
   $("#day-2").append(
-    "<h1>" + moment().add(2, "day").format("dddd") + " " + "</h1>"
+    "<h1>" +
+      moment().add(3, "day").format("dddd") +
+      " " +
+      "</h1>" +
+      "<p id=futureWeather>" +
+      " It will be: " +
+      weatherDaily[2].weather[0].description +
+      "<br>" +
+      "<br>" +
+      "The high will be : " +
+      weatherDaily[2].temp.max +
+      "<br>" +
+      "The low will be : " +
+      weatherDaily[2].temp.min +
+      "<br>" +
+      "<br>" +
+      " The humidity will be : " +
+      weatherDaily[2].humidity +
+      "<br>" +
+      "<br>" +
+      "The UV Index will be " +
+      weatherDaily[2].uvi +
+      "</p>"
   );
   $("#day-3").append(
-    "<h1>" + moment().add(3, "day").format("dddd") + " " + "</h1>"
+    "<h1>" +
+      moment().add(4, "day").format("dddd") +
+      " " +
+      "</h1>" +
+      "<p id=futureWeather>" +
+      " It will be: " +
+      weatherDaily[3].weather[0].description +
+      "<br>" +
+      "<br>" +
+      "The high will be : " +
+      weatherDaily[3].temp.max +
+      "<br>" +
+      "The low will be : " +
+      weatherDaily[3].temp.min +
+      "<br>" +
+      "<br>" +
+      " The humidity will be : " +
+      weatherDaily[3].humidity +
+      "<br>" +
+      "<br>" +
+      "The UV Index will be " +
+      weatherDaily[3].uvi +
+      "</p>"
   );
   $("#day-4").append(
-    "<h1>" + moment().add(4, "day").format("dddd") + " " + "</h1>"
+    "<h1>" +
+      moment().add(5, "day").format("dddd") +
+      " " +
+      "</h1>" +
+      "<p id=futureWeather>" +
+      " It will be: " +
+      weatherDaily[4].weather[0].description +
+      "<br>" +
+      "<br>" +
+      "The high will be : " +
+      weatherDaily[4].temp.max +
+      "<br>" +
+      "The low will be : " +
+      weatherDaily[4].temp.min +
+      "<br>" +
+      "<br>" +
+      " The humidity will be : " +
+      weatherDaily[4].humidity +
+      "<br>" +
+      "<br>" +
+      "The UV Index will be " +
+      weatherDaily[4].uvi +
+      "</p>"
   );
-  $("#day-5").append(
-    "<h1>" + moment().add(5, "day").format("dddd") + " " + "</h1>"
-  );
+  console.log(weatherDaily[0].weather[0].icon);
+  for (i = 0; i < 6; i++) {
+    var icon = weatherDaily[i].weather[0].icon;
+    // var card = $('.forecast-card__cover')[i]
+    if (icon === "01d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/01d.gif)"); //change to sunny day
+    } else if (icon === "01n") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/01n.gif)"); //sunny night
+    } else if (icon === "02d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/02d.gif)"); //change to sunny day
+    } else if (icon === "02n") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/02n.gif)"); //change to sunny day
+    } else if (icon === "03d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/03d.gif)"); //change to sunny day
+    } else if (icon === "03n") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/03n.gif)"); //change to sunny day
+    } else if (icon === "04d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/04d.gif)"); //change to sunny day
+    } else if (icon === "04n") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/04n.gif)"); //change to sunny day
+    } else if (icon === "09d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/09d.gif)"); //change to sunny day
+    } else if (icon === "09n") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/09n.gif)"); //change to sunny day
+    } else if (icon === "10d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/10d.gif)");
+    } else if (icon === "10n") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/10n.gif)"); //change to sunny day
+    } else if (icon === "11d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/11d.gif)"); //change to sunny day
+    } else if (icon === "11n") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/11n.gif)"); //change to sunny day
+    } else if (icon === "13d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/13d.gif)"); //change to sunny day
+    } else if (icon === "13n") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/13n.gif)"); //change to sunny day
+    } else if (icon === "50d") {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/50d.gif)"); //change to sunny day
+    } else {
+      allForecastEl.get(i).css("background-image", "url(./assets/img/50n.gif)"); //change to sunny day
+    }
+  }
 }
 
-function generateBackground() {
-  //if weather = sunny {insert sunny background and icon}
-  //else if weather === rain {insert rainy background}
-  //else if weather === cloudy {insert cloudy background}
-  // else if
-}
+// function generateBackground() {
+//   //if weather = sunny {insert sunny background and icon}
+//   //else if weather === rain {insert rainy background}
+//   //else if weather === cloudy {insert cloudy background}
+//   // else if
+// }
