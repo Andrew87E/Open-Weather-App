@@ -59,7 +59,7 @@ userInput.keypress(function (event) {
     localStorage.setItem("cityName", userInput);
     addListItem();
     generateGeo();
-    console.log(data);
+    // console.log(data);
   }
 });
 
@@ -79,8 +79,13 @@ function generateCurrentWeather() {
       "</h1>" +
       "<br>"
   );
-
+    console.log(weatherCurrent)
   currentCityEl.append(
+    "<h3 class='current-h3'>" +
+    "It's " +
+    weatherCurrent.weather[0].main +
+    " outside! " +
+    "</h3>" +
     "<p>" +
       "The current temp is : " +
       weatherCurrent.temp +
@@ -250,103 +255,104 @@ function generateForecastCard() {
   console.log(weatherDaily[0].weather[0].icon);
   // var card = $('.forecast-card__cover')[i]
 
-  $(".forecast-card__cover").each(generateBackground());
-  
-  function generateBackground() {
-    for (i = 0; i < 6; i++) {
-      var icon = weatherDaily[i].weather[0].icon;
-    }
-    if (icon === "01d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/01d.gif)"
-      ); //change to sunny day
-    } else if (icon === "01n") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/01n.gif)"
-      ); //sunny night
-    } else if (icon === "02d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/02d.gif)"
-      ); //change to sunny day
-    } else if (icon === "02n") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/02n.gif)"
-      ); //change to sunny day
-    } else if (icon === "03d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/03d.gif)"
-      ); //change to sunny day
-    } else if (icon === "03n") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/03n.gif)"
-      ); //change to sunny day
-    } else if (icon === "04d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/04d.gif)"
-      ); //change to sunny day
-    } else if (icon === "04n") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/04n.gif)"
-      ); //change to sunny day
-    } else if (icon === "09d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/09d.gif)"
-      ); //change to sunny day
-    } else if (icon === "09n") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/09n.gif)"
-      ); //change to sunny day
-    } else if (icon === "10d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/10d.gif)"
-      );
-    } else if (icon === "10n") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/10n.gif)"
-      ); //change to sunny day
-    } else if (icon === "11d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/11d.gif)"
-      ); //change to sunny day
-    } else if (icon === "11n") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/11n.gif)"
-      ); //change to sunny day
-    } else if (icon === "13d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/13d.gif)"
-      ); //change to sunny day
-    } else if (icon === "13n") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/13n.gif)"
-      ); //change to sunny day
-    } else if (icon === "50d") {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/50d.gif)"
-      ); //change to sunny day
-    } else {
-      $(".forecast-card__cover").css(
-        "background-image",
-        "url(./assets/img/50n.gif)"
-      ); //change to sunny day
-    }
+  // $(".forecast-card__cover").each(generateBackground());
+  generateBackground();
+}
+
+function generateBackground() {
+  for (i = 0; i < 6; i++) {
+    var icon = weatherDaily[i].weather[0].icon;
+  }
+  if (icon === "01d") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/01d.gif)"
+    ); //change to sunny day
+  } else if (icon === "01n") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/01n.gif)"
+    ); //sunny night
+  } else if (icon === "02d") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/02d.gif)"
+    ); //change to cloudy day
+  } else if (icon === "02n") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/02n.gif)"
+    ); //change to cloudy day
+  } else if (icon === "03d") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/03d.gif)"
+    ); //change to scattered cloudy night
+  } else if (icon === "03n") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/03n.gif)"
+    ); //change to scattered cloudy day
+  } else if (icon === "04d") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/04d.gif)"
+    ); //change to brokn cloudy day
+  } else if (icon === "04n") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/04n.gif)"
+    ); //change to brokn cloudy day
+  } else if (icon === "09d") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/09d.gif)"
+    ); //change to rainy day
+  } else if (icon === "09n") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/09n.gif)"
+    ); //change to rainy day
+  } else if (icon === "10d") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/10d.gif)"
+    ); // change to rainy day
+  } else if (icon === "10n") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/10n.gif)"
+    ); //change to rainy day
+  } else if (icon === "11d") {
+    $currentCityEl.css(
+      "background-image",
+      "url(./assets/img/11d.gif)"
+    ); //change to thunderstorm day
+  } else if (icon === "11n") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/11n.gif)"
+    ); //change to thunderstorm day
+  } else if (icon === "13d") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/13d.gif)"
+    ); //change to snowy day
+  } else if (icon === "13n") {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/13n.gif)"
+    ); //change to snowy day
+  } else if (icon === "50d") {
+    $currentCityEl.css(
+      "background-image",
+      "url(./assets/img/50d.gif)"
+    ); //change to misty day
+  } else {
+    currentCityEl.css(
+      "background-image",
+      "url(./assets/img/50n.gif)"
+    ); //change to misty day
   }
 }
 

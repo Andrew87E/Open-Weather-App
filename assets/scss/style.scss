@@ -32,6 +32,7 @@ body {
   align-items: center;
   position: relative;
   color: aqua;
+  @include background;
   h1 {
     color: aqua;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
