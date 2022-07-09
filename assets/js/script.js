@@ -46,7 +46,7 @@ $(".default").on("click", function () {
   currentCityEl.text("");
   $(".forecast-card__cover").text("");
   generateGeo();
-  geoAPIUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
+  geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
 });
 
 userInput.keypress(function (event) {
@@ -252,41 +252,41 @@ function generateForecastCard() {
     var icon = weatherDaily[i].weather[0].icon;
     // var card = $('.forecast-card__cover')[i]
     if (icon === "01d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/01d.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/01d.gif)"); //change to sunny day
     } else if (icon === "01n") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/01n.gif)"); //sunny night
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/01n.gif)"); //sunny night
     } else if (icon === "02d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/02d.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/02d.gif)"); //change to sunny day
     } else if (icon === "02n") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/02n.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/02n.gif)"); //change to sunny day
     } else if (icon === "03d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/03d.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/03d.gif)"); //change to sunny day
     } else if (icon === "03n") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/03n.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/03n.gif)"); //change to sunny day
     } else if (icon === "04d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/04d.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/04d.gif)"); //change to sunny day
     } else if (icon === "04n") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/04n.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/04n.gif)"); //change to sunny day
     } else if (icon === "09d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/09d.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/09d.gif)"); //change to sunny day
     } else if (icon === "09n") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/09n.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/09n.gif)"); //change to sunny day
     } else if (icon === "10d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/10d.gif)");
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/10d.gif)");
     } else if (icon === "10n") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/10n.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/10n.gif)"); //change to sunny day
     } else if (icon === "11d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/11d.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/11d.gif)"); //change to sunny day
     } else if (icon === "11n") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/11n.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/11n.gif)"); //change to sunny day
     } else if (icon === "13d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/13d.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/13d.gif)"); //change to sunny day
     } else if (icon === "13n") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/13n.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/13n.gif)"); //change to sunny day
     } else if (icon === "50d") {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/50d.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/50d.gif)"); //change to sunny day
     } else {
-      allForecastEl.get(i).css("background-image", "url(./assets/img/50n.gif)"); //change to sunny day
+      $('.ae-container').get(i).css("background-image", "url(./assets/img/50n.gif)"); //change to sunny day
     }
   }
 }
