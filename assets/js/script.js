@@ -1,6 +1,6 @@
 var apiKey = "46b9fbe392a7416271fab6f07e46740a";
 var cityName = localStorage.getItem("cityName");
-var geoAPIUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
+var geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
 var cardBackCity = `https://maps.googleapis.com/maps/api/place/photo?parameters`;
 var lat;
 var lon;
