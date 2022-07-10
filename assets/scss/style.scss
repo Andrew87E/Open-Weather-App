@@ -1,31 +1,37 @@
 @import "./variables";
 @import "./cards";
 @import "./sidebar";
-@import './weathers';
+@import "./weathers";
 
 body {
   background-color: #000;
 }
 
 .ae-head {
-  background-image: url(../img/aurora.jpg);
+  background-image: url(../img/title.jpg);
   height: 400px;
   @include background();
   margin: 10px;
   padding: 10px;
   h1 {
-    color: $neonGreen;
+    background: #00ff00;
+    background: linear-gradient(to left, #00ff00 0%, #00ffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   h4 {
-    color: $teal;
+    background: #000000;
+    background: linear-gradient(to left, #000000 0%, #ffffff 50%, #000000 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
 .current-city {
   height: 500px;
   width: calc(65% - 50px);
-  // float: right;
-  border: solid 1px;
   margin-right: 10px;
   display: flex;
   flex-direction: column;
@@ -33,8 +39,9 @@ body {
   position: relative;
   color: aqua;
   @include background;
+  overflow: hidden;
   h1 {
-    color: aqua;
+    @include currentGradient;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     align-self: flex-start;
@@ -43,7 +50,7 @@ body {
     top: 0;
   }
   p {
-    // color: white;
+    @include currentGradient;
     font-size: x-large;
     justify-content: flex-end;
     align-self: flex-end;
@@ -53,15 +60,14 @@ body {
   }
 }
 
-#uvi{
+#uvi {
   font-size: x-large;
   justify-content: flex-end;
   align-self: flex-end;
   position: absolute;
   bottom: 0;
-  right: 0;
 }
-#futureWeather{
-  color: aqua;
-  font-weight: 400;
+#futureWeather {
+  @include cardGradient;
+  font-weight: 800;
 }

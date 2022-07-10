@@ -22,7 +22,7 @@
   height: 100px;
 }
 .forecast-card h1 {
-  color: aqua;
+  color: ivory;
 }
 .forecast-card__cover {
   position: absolute;
@@ -94,7 +94,11 @@
 
 .logo {
   text-decoration: none;
-  color: #04D939;
+  background: #f6f8f9;
+  background: radial-gradient(circle farthest-side at center center, #f6f8f9 0%, #e5ebee 30%, #d7dee3 60%, #f5f7f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .logo:hover {
   text-decoration: none;
@@ -105,7 +109,7 @@
 .sidebar {
   display: flex;
   flex-direction: row;
-  background-image: url(../img/aurora-small.jpg);
+  background-image: url(../img/photos-sky-different-weather-collage-banner-design-photos-sky-different-weather-collage-banner-design-208117046.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -122,13 +126,21 @@
 }
 .sidebar h4 {
   display: block;
-  color: #03A63C;
+  background: #f6f8f9;
+  background: radial-gradient(circle farthest-side at center center, #f6f8f9 0%, #e5ebee 30%, #d7dee3 60%, #f5f7f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 #ae-list a {
   text-decoration: none;
   font-size: larger;
-  color: #03A63C;
+  background: #f6f8f9;
+  background: radial-gradient(circle farthest-side at center center, #f6f8f9 0%, #e5ebee 30%, #d7dee3 60%, #f5f7f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 500;
   border-bottom: solid white 1px;
   margin-top: 10px;
@@ -136,9 +148,9 @@
   margin-left: 10px;
 }
 #ae-list a:hover {
-  color: #04D939;
+  color: #04d939;
   text-decoration: none;
-  border-bottom: #88F2E8 3px;
+  border-bottom: #88f2e8 3px;
 }
 
 .sunny {
@@ -178,7 +190,7 @@ body {
 }
 
 .ae-head {
-  background-image: url(../img/aurora.jpg);
+  background-image: url(../img/title.jpg);
   height: 400px;
   background-repeat: no-repeat;
   background-position: center;
@@ -187,16 +199,23 @@ body {
   padding: 10px;
 }
 .ae-head h1 {
-  color: #04D939;
+  background: #00ff00;
+  background: linear-gradient(to left, #00ff00 0%, #00ffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .ae-head h4 {
-  color: #88F2E8;
+  background: #000000;
+  background: linear-gradient(to left, #000000 0%, #ffffff 50%, #000000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .current-city {
   height: 500px;
   width: calc(65% - 50px);
-  border: solid 1px;
   margin-right: 10px;
   display: flex;
   flex-direction: column;
@@ -206,9 +225,14 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  overflow: hidden;
 }
 .current-city h1 {
-  color: aqua;
+  background: #008080;
+  background: linear-gradient(to left, #008080 0%, #ffffff 25%, #05c1ff 50%, #ffffff 75%, #005757 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   align-self: flex-start;
   position: absolute;
@@ -216,6 +240,11 @@ body {
   top: 0;
 }
 .current-city p {
+  background: #008080;
+  background: linear-gradient(to left, #008080 0%, #ffffff 25%, #05c1ff 50%, #ffffff 75%, #005757 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: x-large;
   justify-content: flex-end;
   align-self: flex-end;
@@ -230,10 +259,13 @@ body {
   align-self: flex-end;
   position: absolute;
   bottom: 0;
-  right: 0;
 }
 
 #futureWeather {
-  color: aqua;
-  font-weight: 400;
+  background: #f6f8f9;
+  background: radial-gradient(circle farthest-side at center center, #f6f8f9 0%, #e5ebee 30%, #d7dee3 60%, #f5f7f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
 }/*# sourceMappingURL=style.css.map */

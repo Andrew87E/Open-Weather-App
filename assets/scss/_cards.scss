@@ -25,7 +25,7 @@ $c_1: #353540;
   perspective: 1000px;
   height: 100px;
   h1 {
-    color: aqua;
+    color:ivory;
   }
 
   &__cover {
@@ -44,7 +44,7 @@ $c_1: #353540;
     transform: skewX(0.001deg);
     transition: transform 0.35s ease-in-out;
     @include background;
-    p{
+    p {
       position: absolute;
       bottom: 0;
     }
@@ -103,8 +103,8 @@ $c_1: #353540;
     transform: rotateX(7deg) translateY(-6px) scale(1.05);
   }
 }
-.current-h3{
+.current-h3 {
   position: absolute;
-  left:0;
+  left: 0;
   bottom: 45%;
 }

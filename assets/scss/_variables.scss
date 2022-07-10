@@ -1,17 +1,55 @@
 @mixin background {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 @mixin flexy {
-    display: flex;
-    flex-direction:row;
+  display: flex;
+  flex-direction: row;
 }
 
-$neonGreen: #04D939;
-$mediumGreen: #03A63C;
+@mixin currentGradient {
+  background: #008080;
+  background: linear-gradient(
+    to left,
+    #008080 0%,
+    #ffffff 25%,
+    #05c1ff 50%,
+    #ffffff 75%,
+    #005757 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin cardGradient {
+  background: #f6f8f9;
+  background: radial-gradient(
+    circle farthest-side at center center,
+    #f6f8f9 0%,
+    #e5ebee 30%,
+    #d7dee3 60%,
+    #f5f7f9 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+@mixin cardHeader {
+  background: #5a47ff;
+  background: linear-gradient(to left, #5a47ff 0%, #f826ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+$neonGreen: #04d939;
+$mediumGreen: #03a63c;
 $darkGreen: #027333;
 $darkTeal: #025959;
 $darkBlue: #012340;
 $black: #000;
-$teal: #88F2E8;
+$teal: #88f2e8;
