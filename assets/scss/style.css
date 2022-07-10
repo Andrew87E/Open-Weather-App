@@ -107,11 +107,6 @@
   overflow: hidden;
 }
 .current-city h1 {
-  background: #008080;
-  background: linear-gradient(to left, #008080 0%, #ffffff 25%, #05c1ff 50%, #ffffff 75%, #005757 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   align-self: flex-start;
   position: absolute;
@@ -119,17 +114,13 @@
   top: 0;
 }
 .current-city p {
-  background: #008080;
-  background: linear-gradient(to left, #008080 0%, #ffffff 25%, #05c1ff 50%, #ffffff 75%, #005757 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   font-size: x-large;
   justify-content: flex-end;
   align-self: flex-end;
   position: absolute;
   bottom: 0;
   right: 0;
+  margin-bottom: 5px;
 }
 
 #uvi {

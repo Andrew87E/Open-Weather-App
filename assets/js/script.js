@@ -1,5 +1,6 @@
 var apiKey = "46b9fbe392a7416271fab6f07e46740a";
 var cityName = localStorage.getItem("cityName");
+var cityArr = JSON.parse(localStorage.getItem("cityName")) || [];
 var geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
 var cardBackCity = `https://maps.googleapis.com/maps/api/place/photo?parameters`;
 var lat;
@@ -32,15 +33,18 @@ function init() {
 }
 
 function generateGeo() {
-  fetch(geoAPIUrl)
+  fetch(
+    `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`
+  )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      console.log(data);
       lat = data[0].lat;
       lon = data[0].lon;
-    })
-    .then(function () {
+      // })
+      // .then(function () {
       var weatherAPIUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
       fetch(weatherAPIUrl)
         .then(function (response) {
@@ -56,7 +60,7 @@ function generateGeo() {
 
 $(".default").on("click", function () {
   cityName = this.text;
-  eraser()
+  eraser();
   generateGeo();
   geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
 });
@@ -64,26 +68,41 @@ $(".default").on("click", function () {
 function eraser() {
   currentCityEl.text("");
   $(".forecast-card__cover").text("");
+  $("#uvi").text("");
 }
 
 userInput.keypress(function (event) {
   if (event.key === "Enter") {
-    eraser()
+    eraser();
     userInput = this.value;
     cityName = this.value;
-    localStorage.setItem("cityName", userInput);
+    cityArr.push(cityName);
+    localStorage.setItem("cityName", JSON.stringify(cityArr));
     addListItem();
     generateGeo();
   }
 });
 
 function addListItem() {
-  listEl.append("<li>" + '<a href="#">' + cityName + "</a>" + "</li>");
+  var newLi = $("<li>");
+  // newLi.html(`<a href="#${cityName}">` + cityName + "</a>");
+  var newA = $("<a>");
+  newA.attr("href", `#${cityName}`);
+  newA.text(cityName);
+  newA.on("click", function () {
+    cityName = this.text;
+    eraser();
+    generateGeo();
+    geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
+  });
+  newLi.append(newA);
+  listEl.append(newLi);
 }
-$("#uvi").hide();
+
+// $("#uvi").hide();
 
 function generateCurrentWeather() {
-  $("#uvi").show();
+  // $("#uvi").show();
 
   currentCityEl.append(`
     <h1>
@@ -95,7 +114,9 @@ function generateCurrentWeather() {
       It feels like: ${weatherCurrent.feels_like}<br>
       The humidity is: ${weatherCurrent.humidity}<br>
       The wind speed is: ${weatherCurrent.wind_speed}mph<br>    
-      <br><span id="uvi">The current UV Index is: ${weatherCurrent.uvi}</span>
+      <br><span id="uvi">The current UV Index is: ${Math.floor(
+        weatherCurrent.uvi
+      )}</span>
     </p>
   `);
 
@@ -110,7 +131,7 @@ function generateCurrentWeather() {
     uviEl.addClass("highuvi");
   else uviEl.addClass("yougonnadie");
 
-  uviEl.text("The current UV Index is " + weatherCurrent.uvi);
+  // uviEl.text("The current UV Index is " + weatherCurrent.uvi);
 
   var icon = weatherCurrent.weather[0].icon;
   currentCityEl.css("background-image", `url(./assets/img/${icon}.gif)`);
@@ -148,3 +169,7 @@ function setDayCardBackgrounds() {
 }
 
 init();
+for (i = 0; i < cityArr.length; i++) {
+  cityName = cityArr[i];
+  addListItem();
+}

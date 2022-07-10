@@ -10,7 +10,7 @@
     @include background;
     overflow: hidden;
     h1 {
-      @include currentGradient;
+      // @include currentGradient;
       font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
       align-self: flex-start;
@@ -19,13 +19,14 @@
       top: 0;
     }
     p {
-      @include currentGradient;
+      // @include currentGradient;
       font-size: x-large;
       justify-content: flex-end;
       align-self: flex-end;
       position: absolute;
       bottom: 0;
       right: 0;
+      margin-bottom: 5px;
     }
   }
   
