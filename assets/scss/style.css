@@ -92,6 +92,54 @@
   bottom: 45%;
 }
 
+.current-city {
+  height: 500px;
+  width: calc(65% - 50px);
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: aqua;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+.current-city h1 {
+  background: #008080;
+  background: linear-gradient(to left, #008080 0%, #ffffff 25%, #05c1ff 50%, #ffffff 75%, #005757 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  align-self: flex-start;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.current-city p {
+  background: #008080;
+  background: linear-gradient(to left, #008080 0%, #ffffff 25%, #05c1ff 50%, #ffffff 75%, #005757 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: x-large;
+  justify-content: flex-end;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#uvi {
+  font-size: x-large;
+  justify-content: flex-end;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+}
+
 .logo {
   text-decoration: none;
   background: #f6f8f9;
@@ -185,6 +233,20 @@
   color: purple;
 }
 
+/* all media queries */
+/* at a width of 768px or lower hamburger menu appears and cards become stacked */
+@media screen and (max-width: 768px) {
+  .current-city {
+    width: 100%;
+    float: none;
+  }
+}
+@media screen and (max-width: 879) {
+  .current-city {
+    width: 100%;
+    float: none;
+  }
+}
 body {
   background-color: #000;
 }
@@ -211,46 +273,6 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.current-city {
-  height: 500px;
-  width: calc(65% - 50px);
-  margin-right: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  color: aqua;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  overflow: hidden;
-}
-.current-city h1 {
-  background: #008080;
-  background: linear-gradient(to left, #008080 0%, #ffffff 25%, #05c1ff 50%, #ffffff 75%, #005757 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  align-self: flex-start;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.current-city p {
-  background: #008080;
-  background: linear-gradient(to left, #008080 0%, #ffffff 25%, #05c1ff 50%, #ffffff 75%, #005757 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: x-large;
-  justify-content: flex-end;
-  align-self: flex-end;
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 
 #uvi {

@@ -1,7 +1,9 @@
 @import "./variables";
 @import "./cards";
+@import "./currentweather";
 @import "./sidebar";
 @import "./weathers";
+@import "./responsive";
 
 body {
   background-color: #000;
@@ -26,37 +28,6 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-}
-
-.current-city {
-  height: 500px;
-  width: calc(65% - 50px);
-  margin-right: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  color: aqua;
-  @include background;
-  overflow: hidden;
-  h1 {
-    @include currentGradient;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    align-self: flex-start;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  p {
-    @include currentGradient;
-    font-size: x-large;
-    justify-content: flex-end;
-    align-self: flex-end;
-    position: absolute;
-    bottom: 0;
-    right: 0;
   }
 }
 
