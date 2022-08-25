@@ -1,4 +1,4 @@
-var apiKey = "46b9fbe392a7416271fab6f07e46740a";
+var apiKey = "f0f51cae217e5275119ea2495f244fa2";
 var cityName = localStorage.getItem("cityName");
 var cityArr = JSON.parse(localStorage.getItem("cityName")) || [];
 var geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
