@@ -1,33 +1,33 @@
-var apiKey = "46b9fbe392a7416271fab6f07e46740a";
-var cityName = localStorage.getItem("cityName");
-var cityArr = JSON.parse(localStorage.getItem("cityName")) || [];
-var geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
-var cardBackCity = `https://maps.googleapis.com/maps/api/place/photo?parameters`;
-var lat;
-var lon;
-var listEl = $("#ae-list");
-var userInput = $("#userInput");
-var currentCityEl = $(".current-city");
-var allForecastEl = $(".forecast-card");
+const apiKey = "46b9fbe392a7416271fab6f07e46740a";
+const cityName = localStorage.getItem("cityName");
+const cityArr = JSON.parse(localStorage.getItem("cityName")) || [];
+const geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
+const cardBackCity = `https://maps.googleapis.com/maps/api/place/photo?parameters`;
+let lat;
+let lon;
+const listEl = $("#ae-list");
+const userInput = $("#userInput");
+const currentCityEl = $(".current-city");
+const allForecastEl = $(".forecast-card");
 // allForecastEl.hide();
-var weatherData;
-var usableData;
-var weatherCurrent;
-var weatherDaily;
-var weatherHourly;
-var todaysDate = moment().format("dddd, MMMM, YYYY, h:mm a");
+let weatherData;
+let usableData;
+let weatherCurrent;
+let weatherDaily;
+let weatherHourly;
+const todaysDate = moment().format("dddd, MMMM, YYYY, h:mm a");
 
 function init() {
-  var $cardContainer = $(".ae-container");
+  const $cardContainer = $(".ae-container");
 
   //create our forecast cards
-  for (var day = 0; day < 5; day++) {
-    var template = `
+  for (let day = 0; day < 5; day++) {
+    const template = `
       <div class="forecast-card">
           <div class="forecast-card__cover" id="day-${day}"></div>
       </div>`;
 
-    var $card = $(template);
+    const $card = $(template);
     $cardContainer.append($card);
   }
 }
@@ -45,7 +45,7 @@ function generateGeo() {
       lon = data[0].lon;
       // })
       // .then(function () {
-      var weatherAPIUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+      const weatherAPIUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
       fetch(weatherAPIUrl)
         .then(function (response) {
           return response.json();
@@ -84,9 +84,9 @@ userInput.keypress(function (event) {
 });
 
 function addListItem() {
-  var newLi = $("<li>");
+  const newLi = $("<li>");
   // newLi.html(`<a href="#${cityName}">` + cityName + "</a>");
-  var newA = $("<a>");
+  const newA = $("<a>");
   newA.attr("href", `#${cityName}`);
   newA.text(cityName);
   newA.on("click", function () {
@@ -120,7 +120,7 @@ function generateCurrentWeather() {
     </p>
   `);
 
-  var uviEl = $("#uvi");
+  const uviEl = $("#uvi");
 
   if (weatherCurrent.uvi < 3) uviEl.addClass("lowuvi");
   else if (weatherCurrent.uvi > 3 && weatherCurrent.uvi < 6)
@@ -133,14 +133,14 @@ function generateCurrentWeather() {
 
   // uviEl.text("The current UV Index is " + weatherCurrent.uvi);
 
-  var icon = weatherCurrent.weather[0].icon;
+  const icon = weatherCurrent.weather[0].icon;
   currentCityEl.css("background-image", `url(./assets/img/${icon}.gif)`);
 
   generateForecastCard();
 }
 
 function generateForecastCard() {
-  for (var day = 0; day < 5; day++) {
+  for (let day = 0; day < 5; day++) {
     dayWeather = weatherDaily[day];
 
     $(`#day-${day}`).append(
@@ -162,14 +162,15 @@ function generateForecastCard() {
   setDayCardBackgrounds();
 }
 function setDayCardBackgrounds() {
-  for (var day = 0; day < 5; day++) {
-    var icon = weatherDaily[day].weather[0].icon;
+  for (let day = 0; day < 5; day++) {
+    const icon = weatherDaily[day].weather[0].icon;
     $("#day-" + day).css("background-image", `url(./assets/img/${icon}.gif)`);
   }
 }
 
 init();
-for (i = 0; i < cityArr.length; i++) {
+
+for (let i = 0; i < cityArr.length; i++) {
   cityName = cityArr[i];
   addListItem();
 }
