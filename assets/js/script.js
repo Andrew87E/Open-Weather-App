@@ -1,4 +1,4 @@
-const apiKey = "46b9fbe392a7416271fab6f07e46740a";
+const apiKey = process.env.APIKEY;
 const cityName = localStorage.getItem("cityName");
 const cityArr = JSON.parse(localStorage.getItem("cityName")) || [];
 const geoAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;

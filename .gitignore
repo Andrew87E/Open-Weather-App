@@ -95,3 +95,5 @@ iOSInjectionProject/
 .pnp.loader.mjs
 
 .eslintrc.json
+
+.next

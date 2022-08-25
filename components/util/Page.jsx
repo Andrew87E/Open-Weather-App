@@ -15,6 +15,7 @@ export const Page = (currentPage, desc, children) => {
         <title>{pageTitle}</title>
         <meta name="title" content={pageTitle} />
         <meta name="description" content={desc} />
+        <script src="../../assets/js/script.js"></script>
       </Head>
 
       <main>

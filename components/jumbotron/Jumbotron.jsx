@@ -6,7 +6,7 @@ export const Jumbotron = () => {
       <div className="mask">
         <div className="d-flex justify-content-center align-items-center h-100">
           <div>
-            <h1 className="mb-3">Weather</h1>
+            <h1 className="mb-3 text-6xl">Weather</h1>
             <h4 className="mb-3">Using the Open Weather API</h4>
           </div>
         </div>

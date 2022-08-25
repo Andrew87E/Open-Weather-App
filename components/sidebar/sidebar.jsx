@@ -1,17 +1,6 @@
 import React from "react";
-import $ from 'jquery'
 
 export const Sidebar = () => {
-  const userInput = $("#userInput");
-  const cityName = $('.default').text()
-  const apiKey = process.env.APIKEY
-  console.log(cityName)
-
-  const handleClick = () => {
-    axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`)
-  }
-
-
 
   return (
     <div className="container float-left sidebar column rounded-3xl w-64">
@@ -38,27 +27,27 @@ export const Sidebar = () => {
 
           <ul id="ae-list" className="list-unstyled components mb-5">
             <li>
-              <a href="#Houston" className="default hou" onClick={()=>{handleClick()}}>
+              <a href="#Houston" className="default hou">
                 Houston
               </a>
             </li>
             <li>
-              <a href="#Austin" className="default atx" onClick={()=>{handleClick()}}>
+              <a href="#Austin" className="default atx">
                 Austin
               </a>
             </li>
             <li>
-              <a href="#Dallas" className="default dtx" onClick={()=>{handleClick()}}>
+              <a href="#Dallas" className="default dtx">
                 Dallas
               </a>
             </li>
             <li>
-              <a href="#Chicago" className="default chi" onClick={()=>{handleClick()}}>
+              <a href="#Chicago" className="default chi">
                 Chicago
               </a>
             </li>
             <li>
-              <a href="#Las-Vegas" className="default lv" onClick={()=>{handleClick()}}>
+              <a href="#Las-Vegas" className="default lv">
                 Las Vegas
               </a>
             </li>
