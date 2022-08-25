@@ -4,13 +4,16 @@
 @import "./sidebar";
 @import "./weathers";
 @import "./responsive";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   background-color: #000;
 }
 
 .ae-head {
-  background-image: url(../img/title.jpg);
+  background-image: url(/img/title.jpg);
   height: 400px;
   @include background();
   margin: 10px;
@@ -41,4 +44,8 @@ body {
 #futureWeather {
   @include cardGradient;
   font-weight: 800;
+}
+
+.mask {
+  background-color: rgba(0, 0, 0, 0);
 }

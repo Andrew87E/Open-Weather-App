@@ -11,7 +11,7 @@
 }
 .sidebar {
   @include flexy();
-  background-image: url(../img/photos-sky-different-weather-collage-banner-design-photos-sky-different-weather-collage-banner-design-208117046.jpg);  
+  background-image: url(/img/photos-sky-different-weather-collage-banner-design-photos-sky-different-weather-collage-banner-design-208117046.jpg);  
   @include background();
   height: 500px;
   min-height: fit-content;

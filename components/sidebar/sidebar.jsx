@@ -2,59 +2,59 @@ import React from "react";
 
 export const Sidebar = () => {
   return (
-    <div class="container float-left sidebar column">
-      <nav id="sidebar" class="order-last">
-        <div class="">
+    <div className="container float-left sidebar column rounded-3xl w-64">
+      <nav id="sidebar" className="order-last">
+        <div className="">
           <h1>
-            <a href="index.html" class="logo">
+            <a href="index.html" className="logo">
               Weather
             </a>
           </h1>
           <h4>Open Weather API</h4>
 
-          <div class="mb-5 px-4">
-            <h3 class="h6 mb-3">Search for a City</h3>
-            <form class="subscribe-form">
+          <div className="mb-5 px-4">
+            <h3 className="h6 mb-3">Search for a City</h3>
+            <form className="subscribe-form">
               <input
                 id="userInput"
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Enter City Name"
               />
             </form>
           </div>
 
-          <ul id="ae-list" class="list-unstyled components mb-5">
+          <ul id="ae-list" className="list-unstyled components mb-5">
             <li>
-              <a href="#Houston" class="default hou">
+              <a href="#Houston" className="default hou">
                 Houston
               </a>
             </li>
             <li>
-              <a href="#Austin" class="default atx">
+              <a href="#Austin" className="default atx">
                 Austin
               </a>
             </li>
             <li>
-              <a href="#Dallas" class="default dtx">
+              <a href="#Dallas" className="default dtx">
                 Dallas
               </a>
             </li>
             <li>
-              <a href="#Chicago" class="default chi">
+              <a href="#Chicago" className="default chi">
                 Chicago
               </a>
             </li>
             <li>
-              <a href="#Las-Vegas" class="default lv">
+              <a href="#Las-Vegas" className="default lv">
                 Las Vegas
               </a>
             </li>
           </ul>
-          <div class="footer px-4">
+          <div className="footer px-4">
             <p>
               Copyright &copy;
-              <i class="icon-heart">♥</i> by
+              <i className="icon-heart">♥</i> by
               <a href="https://github.com/Andrew87e" target="_blank">
                 Andrew
               </a>
